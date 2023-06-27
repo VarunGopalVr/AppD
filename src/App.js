@@ -1,5 +1,7 @@
 import Home from './components/Home'
+import React from 'react'
 import logo from './files/addD1.webp'
+import { useState } from 'react'
 import {Route,Routes,Link} from 'react-router-dom'
 import ContactUs from './components/ContactUs'
 import About from './components/About'
@@ -9,7 +11,9 @@ import './App.css'
 import facebook from './files/facebook.png'
 import insta from './files/insta.webp'
 import twitter from './files/twitter.png'
-import bg from './files/bg.avif'
+import bg from './files/wedbg4.jpeg'
+import Modal from 'react-modal';
+import menu2 from './files/menu2.png'
 
 
 function App() {
@@ -26,10 +30,35 @@ function App() {
 zIndex : -1,    
     
   }
+
+  const customStyles = {
+    content: {
+      backgroundColor : "beige",
+      width : "100%",
+    height : "100%",
+    top:"0",
+    left:"0",
+    fontSize : "5vh",
+    transition: "top 3s ease-in",
+    },
+    
+  };
+   
+    const [modalIsOpen, setIsOpen] = useState(false);
+  
+    function openModal() {
+      setIsOpen(true);
+    }
+
+  
+    function closeModal() {
+      setIsOpen(false);
+    }
  
   return (
     <div >
-      <div>
+
+
       <img style={bag} src={bg} alt=''/>
 
   <div className="navbars">
@@ -39,8 +68,29 @@ zIndex : -1,
         <li className="m1"><Link to="/ServicesAndFacilities"> ServicesAndFacilities</Link></li>
         <li className="m1"><Link to="/Gallery"> Gallery</Link></li>
         <li className='m1'><Link to="/ContactUs"> ContactUs</Link></li>
+        <div className='m3'>
+        <button className='But' onClick={openModal}>
+          <img src={menu2} className='imgApp' alt="" />
+        </button>
+        <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}>
+          
+        <div className='mod'>
+        <button className='Close' onClick={closeModal}>x</button>
+        <li className="m2"><Link onClick={closeModal} to='/Home'> Home</Link></li>
+        <li className="m2"><Link to="/About" onClick={closeModal}> About</Link></li>
+        <li className="m2"><Link to="/ServicesAndFacilities" onClick={closeModal}> ServicesAndFacilities</Link></li>
+        <li className="m2"><Link to="/Gallery" onClick={closeModal}> Gallery</Link></li>
+        <li className='m2'><Link to="/ContactUs" onClick={closeModal}> ContactUs</Link></li>
+        </div>
+  
+        </Modal>
+          </div>    
       </div>
-    
+     
+  
 
    <div className="ele">
    
@@ -53,6 +103,12 @@ zIndex : -1,
         <Route path='/' element={<Home/>}/>
       </Routes>
       </div>
+
+
+
+   
+
+
 
       <div className="footer">
         <div className="footerHead">
@@ -85,8 +141,7 @@ zIndex : -1,
         <h3 style={{textAlign:"center",fontSize:13}}>Copyright © Yashoda Palm Groves. All rights reserved.</h3>
       </div>
 
-      </div>      
-    </div>
+</div>
   );
 }
 

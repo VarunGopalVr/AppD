@@ -2,3 +2,15 @@
     text-align: center;
     
 }
+
+.colors{
+    background-color: crimson;
+    height: 50vw;
+    width: 100vw;
+}
+
+@media screen and (min-width:400px) and (max-width:550px) {
+    .colors{
+        margin-bottom: 7vw;
+    }
+}

@@ -1,7 +1,7 @@
 .vid1{
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 0;
     top:0px;
@@ -21,9 +21,13 @@
     }
 
     .content{
-        margin-top: 100vh;
+        
         background-color: beige;
+       
         height: 100vh;
+        margin: 5vw;
+        margin-top: 100vh;
+        
         margin-bottom: 10vh;
        }
 
@@ -36,5 +40,47 @@
     align-items: center;
     font-size: 4vh;
     margin-bottom: 10vh;
-    height: 10vh;
+    height: 15vh;
+}
+
+
+@media  screen and (min-width: 1030px) {
+    .h{
+    display: flex;
+    }
+    .p{
+       margin-top: 25px;
+        width: 35vw;
+        margin-right: 10px;
+    } 
+
+    .it{
+        display: flex;
+        margin-top:45px;
+        width:65vw;
+      
+        
+        
+    }
+
+   
+
+}
+    
+.h{
+        
+        width: 75%;
+        margin: auto;
+        margin-top: 25px;
+        padding: 25px 40px;
+}
+ 
+.p>h1{
+    font-size: 1.8rem;
+}
+
+
+.it>img{
+        width:100%;
+    
 }

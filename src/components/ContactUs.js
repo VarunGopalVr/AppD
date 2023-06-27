@@ -14,7 +14,7 @@ Landmark : Mamidpally to Jalpally Rd, Hyderabad, Telangana 500005.</h3>
 <h5 style={{fontWeight:400}}>Nearby Rajiv Gandhi International Airport, And Nehru The Outer Ring Road is just a few minutes away</h5>
 
       </div>
-
+      <div className="colors"></div>
 
      
 
